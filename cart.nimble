@@ -27,4 +27,4 @@ task buildcart, "Build optimized wasm binary from Nim code and import it to tic8
 task runcart, "Build optimized wasm binary from Nim code and run it with tic80":
   rmFile("cart.tic")
   exec("nim c -d:release -o:cart.wasm src/cart")
-  exec("tic80 --fs=\"$PWD\" --cmd=\"load src/cart.tic & import binary cart.wasm & save cart.tic & run\"")
+  exec("tic80 --skip --fs=\"$PWD\" --cmd=\"load src/cart.tic & import binary cart.wasm & save cart.tic & run\"")
