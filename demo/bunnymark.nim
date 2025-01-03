@@ -1,5 +1,5 @@
 import std/[random]
-import ../cart/tic80
+import ../src/cart/tic80
 
 let ToolbarHeight = 6
 
@@ -15,12 +15,12 @@ type
     lastTime: float32
 
 proc getValue(f: var FPS): int32 =
-  if time() - f.lastTime <= 1000:
+  if ttime() - f.lastTime <= 1000:
     inc f.frames
   else:
     f.value = f.frames
     f.frames = 0
-    f.lastTime = time()
+    f.lastTime = ttime()
   f.value
 
 proc newBunny: Bunny =
@@ -35,7 +35,7 @@ proc newBunny: Bunny =
   )
 
 proc draw(b: Bunny) =
-  spr(b.sprite, b.x.int32, b.y.int32, transColor=1, w=4, h=4)
+  spr(b.sprite, b.x.int32, b.y.int32, transColor=Color1, w=4, h=4)
 
 proc update(b: var Bunny) =
   b.x += b.speedX
@@ -61,7 +61,7 @@ var fps: FPS
 var bunnies: seq[Bunny]
 
 proc TIC {.exportWasm.} =
-  cls(13)
+  cls(Color13)
 
   if btn(P1_Up):
     for _ in 1..5:
@@ -78,7 +78,6 @@ proc TIC {.exportWasm.} =
   for bunny in bunnies.mitems:
     bunny.draw()
 
-  rect(0, 0, Width, ToolbarHeight, 0)
-  print("Bunnies: " & $bunnies.len, 1, 0, 11, false, 1, false)
-  print("FPS: " & $fps.getValue(), Width div 2, 0, 11, false, 1, false)
-
+  rect(0, 0, Width, ToolbarHeight, Color0)
+  print("Bunnies: " & $bunnies.len, 1, 0, Color11, false, 1, false)
+  print("FPS: " & $fps.getValue(), Width div 2, 0, Color11, false, 1, false)
