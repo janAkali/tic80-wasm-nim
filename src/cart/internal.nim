@@ -257,9 +257,6 @@ proc mset*(x, y, value: int32)
 ##       System Functions
 ##  ---------------------------
 
-proc exit*()
-  ##  Interrupt program and return to console.
-
 proc tstamp*(): uint32
   ##  Returns the current Unix timestamp in seconds.
 
@@ -267,9 +264,13 @@ proc trace*(text: cstring; color: Color = Color15)
   ##  Print a string to the Console.
 
 {.pop.}
+# 't' prefix is needed to fix "unreachable code executed" error and clashing wasi imports
+proc texit*() {.importc,
+    codegenDecl: "__attribute__((import_name(\"exit\"))) $1 $2$3".}
 
-# suffix fixes "unreachable code executed" error
-proc time2*(): cfloat {.importc,
+  ##  Interrupt program and return to console.
+
+proc ttime*(): cfloat {.importc,
     codegenDecl: "__attribute__((import_name(\"time\"))) $1 $2$3".}
   ##  Returns how many milliseconds have passed since game started.
 

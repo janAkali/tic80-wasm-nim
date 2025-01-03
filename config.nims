@@ -36,6 +36,7 @@ switch("passC", "--sysroot=" & (wasi / "share" / "wasi-sysroot"))
 
 switch("passL", "-Wl,-zstack-size=8192,--no-entry,--import-memory -mexec-model=reactor -Wl,--initial-memory=262144,--max-memory=262144,--global-base=98304")
 
+#switch("define", "nimPreviewSlimSystem")
 when not defined(release):
   switch("assertions", "off")
   switch("checks", "off")

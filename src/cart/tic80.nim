@@ -50,7 +50,9 @@ proc btnp*(index: Button, hold: int32 = -1, period: int32 = -1): bool {.inline.}
   ##  Get gamepad button state according to previous frame.
   internal.btnp(index, hold, period) > 0
 
-proc mouse*(): MousePos {.inline.} = internal.mouse(addr result)
+proc mouse*(): MousePos {.inline.} =
+  result = MousePos()
+  internal.mouse(addr result)
   ##  Get XY and press state of mouse/touch.
 
 proc pmemset*(address: int32; value: int64) = pmem(address, value)
