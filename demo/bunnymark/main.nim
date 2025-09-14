@@ -1,5 +1,5 @@
-import std/[random]
-import ../src/cart/tic80
+import std/random
+import api/tic80
 
 let ToolbarHeight = 6
 

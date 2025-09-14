@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.2.0"
+version       = "0.2.1"
 author        = "JanAkali"
 description   = "TIC-80 WASM Template"
 license       = "MIT"
@@ -14,6 +14,7 @@ requires "nim >= 2.0.0"
 # Tasks
 
 from std/os import commandLineParams, `/`
+from std/strformat import `&`
 
 proc argsAfterTask(name: string): seq[string] =
   let args = commandLineParams()
@@ -25,20 +26,21 @@ proc verboseExec(cmd: string) =
   echo "Exec: " & cmd
   exec cmd
 
-proc cleanup() =
+proc startup() =
+  mkDir "build"
   rmFile "build" / "main.wasm"
-  rmFile "build" / "game.tic"
+  rmFile "build" / "main.tic"
 
-task buildwasm, "Build wasm binary":
-  cleanup()
-  verboseExec("nim c " & argsAfterTask("buildwasm").join" " & " -o:build/main.wasm src/main.nim")
+task editcart, "Open base cartridge with Tic-80 internal editor":
+  startup()
+  verboseExec(&"tic80 --skip --fs=\"{getCurrentDir()}/build\" --cmd=\"load ../src/main.tic & edit\"")
 
-task buildgame, "Build game cartridge and exit":
-  cleanup()
-  verboseExec("nim c " & argsAfterTask("buildgame").join" " & " -o:build/main.wasm src/main.nim")
-  verboseExec("tic80 --cli --fs=\"$PWD/build\" --cmd=\"load ../src/main.tic & import binary main.wasm & save game.tic & exit\"")
+task buildcart, "Build Tic-80 cartridge":
+  startup()
+  verboseExec("nim c " & argsAfterTask("buildcart").join" " & " -o:build/main.wasm src/main.nim")
+  verboseExec(&"tic80 --cli --fs=\"{getCurrentDir()}/build\" --cmd=\"load ../src/main.tic & import binary main.wasm & save main.tic & exit\"")
 
-task rungame, "Build game cartridge and launch it with tic80":
-  cleanup()
-  verboseExec("nim c " & argsAfterTask("rungame").join" " & " -o:build/main.wasm src/main.nim")
-  verboseExec("tic80 --skip --fs=\"$PWD/build\" --cmd=\"load ../src/main.tic & import binary main.wasm & save game.tic & run\"")
+task runcart, "Build Tic-80 cartridge and launch it":
+  startup()
+  verboseExec("nim c " & argsAfterTask("runcart").join" " & " -o:build/main.wasm src/main.nim")
+  verboseExec(&"tic80 --skip --fs=\"{getCurrentDir()}/build\" --cmd=\"load ../src/main.tic & import binary main.wasm & save main.tic & run\"")
