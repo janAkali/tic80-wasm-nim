@@ -273,15 +273,3 @@ proc texit*() {.importc,
 proc ttime*(): cfloat {.importc,
     codegenDecl: "__attribute__((import_name(\"time\"))) $1 $2$3".}
   ##  Returns how many milliseconds have passed since game started.
-
-import std/macros
-
-macro exportWasm*(def: untyped): untyped =
-  result = def
-  result[^3] = nnkPragma.newTree(
-    ident("exportc"),
-    nnkExprColonExpr.newTree(
-      ident("codegenDecl"),
-      newStrLitNode("__attribute__((export_name(\"$2\"))) $1 $2$3")
-    )
-  )

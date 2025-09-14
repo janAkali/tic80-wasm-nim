@@ -1,5 +1,16 @@
-import internal except btn, btnp, trace
-export internal except btn, btnp, trace
+import std/macros
+import internal except btn, btnp
+export internal except btn, btnp
+
+macro exportWasm*(def: untyped): untyped =
+  result = def
+  result[^3] = nnkPragma.newTree(
+    ident("exportc"),
+    nnkExprColonExpr.newTree(
+      ident("codegenDecl"),
+      newStrLitNode("__attribute__((export_name(\"$2\"))) $1 $2$3")
+    )
+  )
 
 proc font*(text: cstring, x, y: int32, transColor, char_width, char_height: int8,
     fixed: bool, scale: int8, alt: bool): int8 {.discardable.} =
@@ -48,7 +59,7 @@ proc btn*(index: Button): bool {.inline.} =
 
 proc btnp*(index: Button, hold: int32 = -1, period: int32 = -1): bool {.inline.} =
   ##  Get gamepad button state according to previous frame.
-  internal.btnp(index, hold, period) > 0
+  bool internal.btnp(index, hold, period) and 1'u32
 
 proc mouse*(): MousePos {.inline.} =
   result = MousePos()
@@ -64,10 +75,6 @@ proc pixset*(x, y: int32; color: Color) = pix(x, y, color)
   ##  Set the color of a single pixel.
 proc pixget*(x, y: int32): uint8 = pix(x, y, Null)
   ##  Get the color of a single pixel.
-
-proc trace*(items: varargs[cstring, cstring]) =
-  ##  Print a string to the Console.
-  for item in items: internal.trace(item)
 
 proc print*(text: string; x, y: int32; color: Color = Color15; fixed = false;
            scale: int32 = 1; alt = false): int32 {.discardable.} =

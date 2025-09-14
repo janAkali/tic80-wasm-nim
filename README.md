@@ -2,27 +2,21 @@
 
 **TIC80-WASM-Nim** is a template for building TIC-80 WASM carts using the Nim programming language.
 
-## Features
-
-- Easily create TIC-80 WASM-compatible carts.
-- Leverage the power of Nim for your game development.
-- Simple build system with `nimble` tasks.
-
 ## Getting Started
 
-Follow the steps below to set up the project and build your first cart.
+Follow the steps below to set up the project.
 
 ### Prerequisites
 
 - [WASI-SDK](https://github.com/WebAssembly/wasi-sdk) anywhere on your system.
 - [TIC-80](https://tic80.com/) added to your system's `PATH`.
-- [Nim](https://nim-lang.org/) and [Nimble](https://nim-lang.org/docs/nimble.html) installed.
+- [Nim](https://nim-lang.org/) compiler.
 
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/tic80-wasm-nim.git
+   git clone https://codeberg.org/janakali/tic80-wasm-nim
    cd tic80-wasm-nim
    ```
 
@@ -39,15 +33,14 @@ Follow the steps below to set up the project and build your first cart.
 ### Build
 
 1. Edit game code in `src/cart.nim`.
-2. Edit base cart in `src/cart.tic` to change or add sprites, sound and music
-3. Build and try to run cart:
+2. Edit base cart in `assets/wasm_base.tic` to change or add sprites, sound and music
+3. Build and Run cart with nimble:
    ```bash
    nimble runcart
    ```
-
-For more available commands, see:
+   or with `build.sh` bash script:
    ```bash
-   nimble tasks
+   sh build.sh
    ```
 
 ## Contributing

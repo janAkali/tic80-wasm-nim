@@ -1,8 +1,8 @@
 # Package
 
-version       = "0.1.0"
-author        = "archargelod"
-description   = "tic80 wasm template for Nim language"
+version       = "0.2.0"
+author        = "JanAkali"
+description   = "TIC-80 WASM Template"
 license       = "MIT"
 srcDir        = "src"
 
@@ -13,23 +13,32 @@ requires "nim >= 2.0.0"
 
 # Tasks
 
-task wasmbuild, "Build wasm binary (debug)":
-  exec("nim c -o:cart.wasm src/cart")
+from std/os import commandLineParams, `/`
 
-task wasmrelease, "Build wasm binary (release)":
-  exec("nim c -d:release -o:cart.wasm src/cart")
+proc argsAfterTask(name: string): seq[string] =
+  let args = commandLineParams()
+  for i in 0 ..< args.len:
+    if args[i].cmpIgnoreStyle(name) == 0:
+      return args[i+1 .. ^1]
 
-task buildcart, "Build optimized wasm binary and import it to tic80 cart":
-  rmFile("cart.tic")
-  exec("nim c -d:release -o:cart.wasm src/cart")
-  exec("tic80 --cli --fs=\"$PWD\" --cmd=\"load src/cart.tic & import binary cart.wasm & save cart.tic & exit\"")
+proc verboseExec(cmd: string) =
+  echo "Exec: " & cmd
+  exec cmd
 
-task runcart, "Build optimized wasm binary and run it with tic80":
-  rmFile("cart.tic")
-  exec("nim c -d:release -o:cart.wasm src/cart")
-  exec("tic80 --skip --fs=\"$PWD\" --cmd=\"load src/cart.tic & import binary cart.wasm & save cart.tic & run\"")
+proc cleanup() =
+  rmFile "build" / "main.wasm"
+  rmFile "build" / "game.tic"
 
-task debugcart, "Build wasm binary in debug mode and run it with tic80":
-  rmFile("cart.tic")
-  exec("nim c -o:cart.wasm src/cart")
-  exec("tic80 --skip --fs=\"$PWD\" --cmd=\"load src/cart.tic & import binary cart.wasm & save cart.tic & run\"")
+task buildwasm, "Build wasm binary":
+  cleanup()
+  verboseExec("nim c " & argsAfterTask("buildwasm").join" " & " -o:build/main.wasm src/main.nim")
+
+task buildgame, "Build game cartridge and exit":
+  cleanup()
+  verboseExec("nim c " & argsAfterTask("buildgame").join" " & " -o:build/main.wasm src/main.nim")
+  verboseExec("tic80 --cli --fs=\"$PWD/build\" --cmd=\"load ../src/main.tic & import binary main.wasm & save game.tic & exit\"")
+
+task rungame, "Build game cartridge and launch it with tic80":
+  cleanup()
+  verboseExec("nim c " & argsAfterTask("rungame").join" " & " -o:build/main.wasm src/main.nim")
+  verboseExec("tic80 --skip --fs=\"$PWD/build\" --cmd=\"load ../src/main.tic & import binary main.wasm & save game.tic & run\"")
