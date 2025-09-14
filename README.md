@@ -4,13 +4,13 @@
 
 ## Getting Started
 
-Follow the steps below to set up the project.
+Follow the steps below to set up the project:
 
 ### Prerequisites
 
-- [WASI-SDK](https://github.com/WebAssembly/wasi-sdk) anywhere on your system.
-- [TIC-80](https://tic80.com/) added to your system's `PATH`.
-- [Nim](https://nim-lang.org/) compiler.
+- [WASI-SDK](https://github.com/WebAssembly/wasi-sdk) installed anywhere on your system
+- [TIC-80](https://tic80.com/) added to your system's `PATH`
+- [Nim](https://nim-lang.org/) compiler (version 2.0.0 or higher)
 
 ### Installation
 
@@ -20,7 +20,7 @@ Follow the steps below to set up the project.
    cd tic80-wasm-nim
    ```
 
-2. Set the `WASI_SDK_PATH` environment variable to the location of WASI-SDK:
+2. Set the `WASI_SDK_PATH` environment variable to point to your WASI-SDK installation:
    ```bash
    export WASI_SDK_PATH=/path/to/wasi-sdk
    ```
@@ -30,22 +30,63 @@ Follow the steps below to set up the project.
    tic80 --version
    ```
 
-### Build
+## Building and Running
 
-1. Edit game code in `src/cart.nim`.
-2. Edit base cart in `assets/wasm_base.tic` to change or add sprites, sound and music
-3. Build and Run cart with nimble:
-   ```bash
-   nimble runcart
-   ```
-   or with `build.sh` bash script:
-   ```bash
-   sh build.sh
-   ```
+This template provides two ways to build and run your project:
+
+### Method 1: Using Nimble Tasks (Recommended)
+
+The main way to build and run your project is through nimble tasks defined in `cart.nimble`:
+
+- **Build and run the cartridge**:
+  ```bash
+  nimble runcart
+  ```
+
+- **Build only (without running)**:
+  ```bash
+  nimble buildcart
+  ```
+
+- **Edit the base cartridge** (to modify sprites, sounds, or music):
+  ```bash
+  nimble editcart
+  ```
+
+### Method 2: Using Build Script
+
+Alternatively, you can use the `build.sh` script if you prefer not to use nimble tasks. The script accepts an optional directory path as an argument:
+
+- **Build and run main project**:
+  ```bash
+  sh build.sh
+  ```
+
+- **Or specify a project/demo directory**:
+  ```bash
+  # Build and run main project
+  sh build.sh src
+
+  # Build and run blockgame demo
+  sh build.sh demo/blockgame
+  ```
+
+The build script compiles the Nim code to WebAssembly, imports it into the TIC-80 cartridge, and automatically runs the result.
+
+## Demo Projects
+
+The template includes two demo projects in the `demo/` directory:
+- `blockgame/` - A simple tetris clone example
+- `bunnymark/` - A performance testing demo
+
+To run a demo:
+```bash
+sh build.sh demo/blockgame
+```
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a pull request or open an issue.
+Contributions are welcome! Please feel free to submit a pull request or open an issue on Codeberg.
 
 ## License
 
