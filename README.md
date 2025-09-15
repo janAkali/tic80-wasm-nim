@@ -36,11 +36,16 @@ This template provides two ways to build and run your project:
 
 ### Method 1: Using Nimble Tasks (Recommended)
 
-The main way to build and run your project is through nimble tasks defined in `cart.nimble`:
+The main way to build and run your project is through nimble tasks defined in `cart.nimble`
+
+*Arguments after task name are passed to Nim compiler*
 
 - **Build and run the cartridge**:
   ```bash
-  nimble runcart
+  nimble runcart            # debug build
+  ```
+  ```bash
+  nimble runcart -d:release # release build
   ```
 
 - **Build only (without running)**:
