@@ -264,12 +264,14 @@ proc trace*(text: cstring; color: Color = Color15)
   ##  Print a string to the Console.
 
 {.pop.}
+
 # 't' prefix is needed to fix "unreachable code executed" error and clashing wasi imports
 proc texit*() {.importc,
     codegenDecl: "__attribute__((import_name(\"exit\"))) $1 $2$3".}
-
-  ##  Interrupt program and return to console.
+  ##  exit()
+  ##  Interrupts program and returns to console.
 
 proc ttime*(): cfloat {.importc,
     codegenDecl: "__attribute__((import_name(\"time\"))) $1 $2$3".}
+  ##  time()
   ##  Returns how many milliseconds have passed since game started.
