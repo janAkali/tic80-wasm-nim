@@ -268,13 +268,13 @@ proc trace*(text: cstring; color: Color = Color15)
 
 {.pop.}
 
-# 't' prefix is needed to fix "unreachable code executed" error and clashing wasi imports
-proc texit*() {.importc,
+# 'tic' prefix is needed to fix clashing wasi imports
+proc tic_exit*() {.importc,
     codegenDecl: "__attribute__((import_name(\"exit\"))) $1 $2$3".}
   ##  exit()
   ##  Interrupts program and returns to console.
 
-proc ttime*(): cfloat {.importc,
+proc tic_time*(): cfloat {.importc,
     codegenDecl: "__attribute__((import_name(\"time\"))) $1 $2$3".}
   ##  time()
   ##  Returns how many milliseconds have passed since game started.

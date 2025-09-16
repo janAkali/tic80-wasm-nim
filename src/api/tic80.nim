@@ -81,6 +81,18 @@ proc print*(text: string; x, y: int32; color: Color = Color15; fixed = false;
   ##  Print a string using the system font.
   print(cstring(text), x, y, color, fixed, scale, alt)
 
+proc trace*(arr: varargs[string, `$`]) =
+  # trace with Nim strings support and varargs
+  var length = 0
+  for str in arr: length += str.len
+  var acc = newStringOfCap(length)
+  for s in arr: acc &= s
+  trace(acc.cstring)
+
+proc exit*() = internal.tic_exit()
+
+proc time*(): cfloat = internal.tic_time()
+
 proc NimMain() {.importc.}
 
 proc BOOT() {.exportWasm.} =
