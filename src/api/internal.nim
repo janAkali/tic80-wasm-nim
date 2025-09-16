@@ -47,35 +47,6 @@ type
     middle*: bool
     right*: bool
 
-
-##  ---------------------------
-##       Pointers
-##  ---------------------------
-
-const
-  Framebuffer*: ptr Vram = cast[ptr Vram](0)
-  Tiles*: pointer = cast[pointer](0x04000)
-  Sprites*: pointer = cast[pointer](0x06000)
-  Map*: pointer = cast[pointer](0x08000)
-  Gamepads*: pointer = cast[pointer](0x0ff80)
-  Mouse*: pointer = cast[pointer](0x0ff84)
-  Keyboard*: pointer = cast[pointer](0x0ff88)
-  SfxState*: pointer = cast[pointer](0x0ff8c)
-  SoundRegisters*: pointer = cast[pointer](0x0ff9c)
-  Waveforms*: pointer = cast[pointer](0x0ffe4)
-  Sfx*: pointer = cast[pointer](0x100e4)
-  MusicPatterns*: pointer = cast[pointer](0x11164)
-  MusicTracks*: pointer = cast[pointer](0x13e64)
-  SoundState*: pointer = cast[pointer](0x13ffc)
-  StereoVolume*: pointer = cast[pointer](0x14000)
-  PersistentMemory*: pointer = cast[pointer](0x14004)
-  SpriteFlags*: pointer = cast[pointer](0x14404)
-  SystemFont*: pointer = cast[pointer](0x14604)
-  WasmFreeRam*: pointer = cast[pointer](0x18000)
-
-##  160kb
-
-
 ##  ---------------------------
 ##       Constants
 ##  ---------------------------
@@ -99,6 +70,38 @@ const
   SpriteFlagsSize*: uint32 = 512
   SystemFontSize*: uint32 = 2048
   WasmFreeRamSize*: uint32 = 163840
+
+##  160kb
+
+
+##  ---------------------------
+##       TIC-80 RAM
+##  ---------------------------
+
+{.push volatile.}
+
+var
+  Framebuffer*      = cast[ptr Vram](0)
+  Tiles*            = cast[ptr array[TilesSize, uint8]](0x04000)
+  Sprites*          = cast[ptr array[SpritesSize, uint8]](0x06000)
+  Map*              = cast[ptr array[MapSize, uint8]](0x08000)
+  Gamepads*         = cast[ptr array[GamepadsSize, uint8]](0x0ff80)
+  Mouse*            = cast[ptr array[MouseSize, uint8]](0x0ff84)
+  Keyboard*         = cast[ptr array[KeyboardSize, uint8]](0x0ff88)
+  SfxState*         = cast[ptr array[SfxStateSize, uint8]](0x0ff8c)
+  SoundRegisters*   = cast[ptr array[SoundRegistersSize, uint8]](0x0ff9c)
+  Waveforms*        = cast[ptr array[WaveformsSize, uint8]](0x0ffe4)
+  Sfx*              = cast[ptr array[SfxSize, uint8]](0x100e4)
+  MusicPatterns*    = cast[ptr array[MusicPatternsSize, uint8]](0x11164)
+  MusicTracks*      = cast[ptr array[MusicTracksSize, uint8]](0x13e64)
+  SoundState*       = cast[ptr array[SoundStateSize, uint8]](0x13ffc)
+  StereoVolume*     = cast[ptr array[StereoVolumeSize, uint8]](0x14000)
+  PersistentMemory* = cast[ptr array[PersistentMemorySize, uint8]](0x14004)
+  SpriteFlags*      = cast[ptr array[SpriteFlagsSize, uint8]](0x14404)
+  SystemFont*       = cast[ptr array[SystemFontSize, uint8]](0x14604)
+  WasmFreeRam*      = cast[ptr array[WasmFreeRamSize, uint8]](0x18000)
+
+{.pop.}
 
 ##  160kb
 
