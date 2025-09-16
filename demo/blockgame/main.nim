@@ -304,4 +304,4 @@ proc TIC {.exportWasm.} =
           trace(line.cstring)
 
     trace(cstring "Error: " & $e.name & ": " & e.msg)
-    texit()
+    exit()

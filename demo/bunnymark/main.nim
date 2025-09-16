@@ -15,12 +15,12 @@ type
     lastTime: float32
 
 proc getValue(f: var FPS): int32 =
-  if ttime() - f.lastTime <= 1000:
+  if time() - f.lastTime <= 1000:
     inc f.frames
   else:
     f.value = f.frames
     f.frames = 0
-    f.lastTime = ttime()
+    f.lastTime = time()
   f.value
 
 proc newBunny: Bunny =

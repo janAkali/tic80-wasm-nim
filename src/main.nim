@@ -15,3 +15,5 @@ proc TIC {.exportWasm.} =
 
   spr(1 + t mod 60 div 30 * 2, x, y, transColor=Color14, scale=3, w=2, h=2)
   print("Hello from Nim!", 84, 84)
+
+  inc t
