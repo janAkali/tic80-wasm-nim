@@ -1,0 +1,19 @@
+nimTitle	tic80	tic80.html	module api/tic80		0
+nim	exportWasm	tic80.html#exportWasm.m,untyped	macro exportWasm(def: untyped): untyped		5
+nim	font	tic80.html#font,cstring,int32,int32,int8,int8,int8,bool,int8,bool	proc font(text: cstring; x, y: int32; transColor, char_width, char_height: int8;\n     fixed: bool; scale: int8; alt: bool): int8		15
+nim	map	tic80.html#map,int32,int32,int32,int32,int32,int32,Color,int8,int32	proc map(x: int32 = 0; y: int32 = 0; w: int32 = 30; h: int32 = 17; sx: int32 = 0;\n    sy: int32 = 0; transColor: Color = Null; scale: int8 = 1; remap: int32 = -1)		25
+nim	spr	tic80.html#spr,int32,int32,int32,Color,int32,int32,int32,int32,int32	proc spr(id, x, y: int32; transColor: Color = Null; scale: int32 = 1;\n    flip: int32 = 0; rotate: int32 = 0; w: int32 = 1; h: int32 = 1)		35
+nim	ttri	tic80.html#ttri,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,int32,Color,cfloat,cfloat,cfloat	proc ttri(x1, y1, x2, y2, x3, y3, u1, v1, u2, v2, u3, v3: cfloat; texsrc: int32 = 0;\n     transColor: Color = Null; z1: cfloat = 0.0; z2: cfloat = 0.0;\n     z3: cfloat = 0.0; depth = false)		44
+nim	btn	tic80.html#btn,Button	proc btn(index: Button): bool		56
+nim	btnp	tic80.html#btnp,Button,int32,int32	proc btnp(index: Button; hold: int32 = -1; period: int32 = -1): bool		60
+nim	mouse	tic80.html#mouse_2	proc mouse(): MousePos		64
+nim	pmemset	tic80.html#pmemset,int32,int64	proc pmemset(address: int32; value: int64)		69
+nim	pmemget	tic80.html#pmemget,int32	proc pmemget(address: int32): uint32		71
+nim	pixset	tic80.html#pixset,int32,int32,Color	proc pixset(x, y: int32; color: Color)		74
+nim	pixget	tic80.html#pixget,int32,int32	proc pixget(x, y: int32): uint8		76
+nim	print	tic80.html#print,string,int32,int32,Color,int32	proc print(text: string; x, y: int32; color: Color = Color15; fixed = false;\n      scale: int32 = 1; alt = false): int32		79
+nim	trace	tic80.html#trace,string	proc trace(s: string)		84
+nim	trace	tic80.html#trace,varargs[string,]	proc trace(arr: varargs[string, `$`])		87
+nim	exit	tic80.html#exit	proc exit()		95
+nim	time	tic80.html#time	proc time(): cfloat		98
+nimgrp	trace	tic80.html#trace-procs-all	proc		84

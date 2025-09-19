@@ -1,0 +1,207 @@
+nimTitle	internal	internal.html	module api/internal		0
+nim	TileSize	internal.html#TileSize	const TileSize		2
+nim	Width	internal.html#Width	const Width		3
+nim	Height	internal.html#Height	const Height		4
+nim	WidthTiles	internal.html#WidthTiles	const WidthTiles		5
+nim	HeightTiles	internal.html#HeightTiles	const HeightTiles		6
+nim	Bpp	internal.html#Bpp	const Bpp		7
+nim	Key_Null	internal.html#Key_Null	Key.Key_Null		10
+nim	Key_A	internal.html#Key_A	Key.Key_A		10
+nim	Key_B	internal.html#Key_B	Key.Key_B		10
+nim	Key_C	internal.html#Key_C	Key.Key_C		10
+nim	Key_D	internal.html#Key_D	Key.Key_D		10
+nim	Key_E	internal.html#Key_E	Key.Key_E		10
+nim	Key_F	internal.html#Key_F	Key.Key_F		10
+nim	Key_G	internal.html#Key_G	Key.Key_G		10
+nim	Key_H	internal.html#Key_H	Key.Key_H		10
+nim	Key_I	internal.html#Key_I	Key.Key_I		10
+nim	Key_J	internal.html#Key_J	Key.Key_J		10
+nim	Key_K	internal.html#Key_K	Key.Key_K		10
+nim	Key_L	internal.html#Key_L	Key.Key_L		10
+nim	Key_M	internal.html#Key_M	Key.Key_M		10
+nim	Key_N	internal.html#Key_N	Key.Key_N		10
+nim	Key_O	internal.html#Key_O	Key.Key_O		10
+nim	Key_P	internal.html#Key_P	Key.Key_P		10
+nim	Key_Q	internal.html#Key_Q	Key.Key_Q		10
+nim	Key_R	internal.html#Key_R	Key.Key_R		10
+nim	Key_S	internal.html#Key_S	Key.Key_S		10
+nim	Key_T	internal.html#Key_T	Key.Key_T		10
+nim	Key_U	internal.html#Key_U	Key.Key_U		10
+nim	Key_V	internal.html#Key_V	Key.Key_V		10
+nim	Key_W	internal.html#Key_W	Key.Key_W		10
+nim	Key_X	internal.html#Key_X	Key.Key_X		10
+nim	Key_Y	internal.html#Key_Y	Key.Key_Y		10
+nim	Key_Z	internal.html#Key_Z	Key.Key_Z		10
+nim	Key_0	internal.html#Key_0	Key.Key_0		10
+nim	Key_1	internal.html#Key_1	Key.Key_1		10
+nim	Key_2	internal.html#Key_2	Key.Key_2		10
+nim	Key_3	internal.html#Key_3	Key.Key_3		10
+nim	Key_4	internal.html#Key_4	Key.Key_4		10
+nim	Key_5	internal.html#Key_5	Key.Key_5		10
+nim	Key_6	internal.html#Key_6	Key.Key_6		10
+nim	Key_7	internal.html#Key_7	Key.Key_7		10
+nim	Key_8	internal.html#Key_8	Key.Key_8		10
+nim	Key_9	internal.html#Key_9	Key.Key_9		10
+nim	Key_Minus	internal.html#Key_Minus	Key.Key_Minus		10
+nim	Key_Equals	internal.html#Key_Equals	Key.Key_Equals		10
+nim	Key_Leftbracket	internal.html#Key_Leftbracket	Key.Key_Leftbracket		10
+nim	Key_Rightbracket	internal.html#Key_Rightbracket	Key.Key_Rightbracket		10
+nim	Key_Backslash	internal.html#Key_Backslash	Key.Key_Backslash		10
+nim	Key_Semicolon	internal.html#Key_Semicolon	Key.Key_Semicolon		10
+nim	Key_Apostrophe	internal.html#Key_Apostrophe	Key.Key_Apostrophe		10
+nim	Key_Grave	internal.html#Key_Grave	Key.Key_Grave		10
+nim	Key_Comma	internal.html#Key_Comma	Key.Key_Comma		10
+nim	Key_Period	internal.html#Key_Period	Key.Key_Period		10
+nim	Key_Slash	internal.html#Key_Slash	Key.Key_Slash		10
+nim	Key_Space	internal.html#Key_Space	Key.Key_Space		10
+nim	Key_Tab	internal.html#Key_Tab	Key.Key_Tab		10
+nim	Key_Return	internal.html#Key_Return	Key.Key_Return		10
+nim	Key_Backspace	internal.html#Key_Backspace	Key.Key_Backspace		10
+nim	Key_Delete	internal.html#Key_Delete	Key.Key_Delete		10
+nim	Key_Insert	internal.html#Key_Insert	Key.Key_Insert		10
+nim	Key_Pageup	internal.html#Key_Pageup	Key.Key_Pageup		10
+nim	Key_Pagedown	internal.html#Key_Pagedown	Key.Key_Pagedown		10
+nim	Key_Home	internal.html#Key_Home	Key.Key_Home		10
+nim	Key_End	internal.html#Key_End	Key.Key_End		10
+nim	Key_Up	internal.html#Key_Up	Key.Key_Up		10
+nim	Key_Down	internal.html#Key_Down	Key.Key_Down		10
+nim	Key_Left	internal.html#Key_Left	Key.Key_Left		10
+nim	Key_Right	internal.html#Key_Right	Key.Key_Right		10
+nim	Key_Capslock	internal.html#Key_Capslock	Key.Key_Capslock		10
+nim	Key_Ctrl	internal.html#Key_Ctrl	Key.Key_Ctrl		10
+nim	Key_Shift	internal.html#Key_Shift	Key.Key_Shift		10
+nim	Key_Alt	internal.html#Key_Alt	Key.Key_Alt		10
+nim	Key	internal.html#Key	enum Key		10
+nim	P1_Up	internal.html#P1_Up	Button.P1_Up		20
+nim	P1_Down	internal.html#P1_Down	Button.P1_Down		20
+nim	P1_Left	internal.html#P1_Left	Button.P1_Left		20
+nim	P1_Right	internal.html#P1_Right	Button.P1_Right		20
+nim	P1_A	internal.html#P1_A	Button.P1_A		20
+nim	P1_B	internal.html#P1_B	Button.P1_B		20
+nim	P1_X	internal.html#P1_X	Button.P1_X		20
+nim	P1_Y	internal.html#P1_Y	Button.P1_Y		20
+nim	P2_Up	internal.html#P2_Up	Button.P2_Up		20
+nim	P2_Down	internal.html#P2_Down	Button.P2_Down		20
+nim	P2_Left	internal.html#P2_Left	Button.P2_Left		20
+nim	P2_Right	internal.html#P2_Right	Button.P2_Right		20
+nim	P2_A	internal.html#P2_A	Button.P2_A		20
+nim	P2_B	internal.html#P2_B	Button.P2_B		20
+nim	P2_X	internal.html#P2_X	Button.P2_X		20
+nim	P2_Y	internal.html#P2_Y	Button.P2_Y		20
+nim	P3_Up	internal.html#P3_Up	Button.P3_Up		20
+nim	P3_Down	internal.html#P3_Down	Button.P3_Down		20
+nim	P3_Left	internal.html#P3_Left	Button.P3_Left		20
+nim	P3_Right	internal.html#P3_Right	Button.P3_Right		20
+nim	P3_A	internal.html#P3_A	Button.P3_A		20
+nim	P3_B	internal.html#P3_B	Button.P3_B		20
+nim	P3_X	internal.html#P3_X	Button.P3_X		20
+nim	P3_Y	internal.html#P3_Y	Button.P3_Y		20
+nim	P4_Up	internal.html#P4_Up	Button.P4_Up		20
+nim	P4_Down	internal.html#P4_Down	Button.P4_Down		20
+nim	P4_Left	internal.html#P4_Left	Button.P4_Left		20
+nim	P4_Right	internal.html#P4_Right	Button.P4_Right		20
+nim	P4_A	internal.html#P4_A	Button.P4_A		20
+nim	P4_B	internal.html#P4_B	Button.P4_B		20
+nim	P4_X	internal.html#P4_X	Button.P4_X		20
+nim	P4_Y	internal.html#P4_Y	Button.P4_Y		20
+nim	Button	internal.html#Button	enum Button		20
+nim	Null	internal.html#Null	Color.Null		26
+nim	Color0	internal.html#Color0	Color.Color0		26
+nim	Color1	internal.html#Color1	Color.Color1		26
+nim	Color2	internal.html#Color2	Color.Color2		26
+nim	Color3	internal.html#Color3	Color.Color3		26
+nim	Color4	internal.html#Color4	Color.Color4		26
+nim	Color5	internal.html#Color5	Color.Color5		26
+nim	Color6	internal.html#Color6	Color.Color6		26
+nim	Color7	internal.html#Color7	Color.Color7		26
+nim	Color8	internal.html#Color8	Color.Color8		26
+nim	Color9	internal.html#Color9	Color.Color9		26
+nim	Color10	internal.html#Color10	Color.Color10		26
+nim	Color11	internal.html#Color11	Color.Color11		26
+nim	Color12	internal.html#Color12	Color.Color12		26
+nim	Color13	internal.html#Color13	Color.Color13		26
+nim	Color14	internal.html#Color14	Color.Color14		26
+nim	Color15	internal.html#Color15	Color.Color15		26
+nim	Color	internal.html#Color	enum Color		26
+nim	VRAM	internal.html#VRAM	object VRAM		30
+nim	MousePos	internal.html#MousePos	object MousePos		41
+nim	TilesSize	internal.html#TilesSize	const TilesSize		56
+nim	SpritesSize	internal.html#SpritesSize	const SpritesSize		57
+nim	MapSize	internal.html#MapSize	const MapSize		58
+nim	GamepadsSize	internal.html#GamepadsSize	const GamepadsSize		59
+nim	MouseSize	internal.html#MouseSize	const MouseSize		60
+nim	KeyboardSize	internal.html#KeyboardSize	const KeyboardSize		61
+nim	SfxStateSize	internal.html#SfxStateSize	const SfxStateSize		62
+nim	SoundRegistersSize	internal.html#SoundRegistersSize	const SoundRegistersSize		63
+nim	WaveformsSize	internal.html#WaveformsSize	const WaveformsSize		64
+nim	SfxSize	internal.html#SfxSize	const SfxSize		65
+nim	MusicPatternsSize	internal.html#MusicPatternsSize	const MusicPatternsSize		66
+nim	MusicTracksSize	internal.html#MusicTracksSize	const MusicTracksSize		67
+nim	SoundStateSize	internal.html#SoundStateSize	const SoundStateSize		68
+nim	StereoVolumeSize	internal.html#StereoVolumeSize	const StereoVolumeSize		69
+nim	PersistentMemorySize	internal.html#PersistentMemorySize	const PersistentMemorySize		70
+nim	SpriteFlagsSize	internal.html#SpriteFlagsSize	const SpriteFlagsSize		71
+nim	SystemFontSize	internal.html#SystemFontSize	const SystemFontSize		72
+nim	WasmFreeRamSize	internal.html#WasmFreeRamSize	const WasmFreeRamSize		73
+nim	Framebuffer	internal.html#Framebuffer	var Framebuffer		78
+nim	Tiles	internal.html#Tiles	var Tiles		79
+nim	Sprites	internal.html#Sprites	var Sprites		80
+nim	Map	internal.html#Map	var Map		81
+nim	Gamepads	internal.html#Gamepads	var Gamepads		82
+nim	Mouse	internal.html#Mouse	var Mouse		83
+nim	Keyboard	internal.html#Keyboard	var Keyboard		84
+nim	SfxState	internal.html#SfxState	var SfxState		85
+nim	SoundRegisters	internal.html#SoundRegisters	var SoundRegisters		86
+nim	Waveforms	internal.html#Waveforms	var Waveforms		87
+nim	Sfx	internal.html#Sfx	var Sfx		88
+nim	MusicPatterns	internal.html#MusicPatterns	var MusicPatterns		89
+nim	MusicTracks	internal.html#MusicTracks	var MusicTracks		90
+nim	SoundState	internal.html#SoundState	var SoundState		91
+nim	StereoVolume	internal.html#StereoVolume	var StereoVolume		92
+nim	PersistentMemory	internal.html#PersistentMemory	var PersistentMemory		93
+nim	SpriteFlags	internal.html#SpriteFlags	var SpriteFlags		94
+nim	SystemFont	internal.html#SystemFont	var SystemFont		95
+nim	WasmFreeRam	internal.html#WasmFreeRam	var WasmFreeRam		96
+nim	circ	internal.html#circ,int32,int32,int32,Color	proc circ(x, y, radius: int32; color: Color)		107
+nim	circb	internal.html#circb,int32,int32,int32,Color	proc circb(x, y, radius: int32; color: Color)		110
+nim	elli	internal.html#elli,int32,int32,int32,int32,Color	proc elli(x, y, a, b: int32; color: Color)		113
+nim	ellib	internal.html#ellib,int32,int32,int32,int32,Color	proc ellib(x, y, a, b: int32; color: Color)		116
+nim	clip	internal.html#clip,int32,int32,int32,int32	proc clip(x, y, width, height: int32)		119
+nim	cls	internal.html#cls,Color	proc cls(color: Color = Color0)		122
+nim	font	internal.html#font,cstring,int32,int32,ptr.uint8,int8,int8,int8,bool,int8,bool	proc font(text: cstring; x, y: int32; trans_colors: ptr uint8; trans_count: int8;\n     char_width, char_height: int8; fixed: bool; scale: int8; alt: bool): int8		125
+nim	line	internal.html#line,cfloat,cfloat,cfloat,cfloat,Color	proc line(x0, y0, x1, y1: cfloat; color: Color)		129
+nim	map	internal.html#map,int32,int32,int32,int32,int32,int32,ptr.uint8,int8,int8,int32	proc map(x, y, w, h, sx, sy: int32; trans_colors: ptr uint8; colorCount: int8;\n    scale: int8; remap: int32)		132
+nim	pix	internal.html#pix,int32,int32,Color	proc pix(x, y: int32; color: Color): uint8		136
+nim	print	internal.html#print,cstring,int32,int32,Color,int32	proc print(text: cstring; x, y: int32; color: Color = Color15; fixed = false;\n      scale: int32 = 1; alt = false): int32		139
+nim	rect	internal.html#rect,int32,int32,int32,int32,Color	proc rect(x, y, w, h: int32; color: Color)		143
+nim	rectb	internal.html#rectb,int32,int32,int32,int32,Color	proc rectb(x, y, w, h: int32; color: Color)		146
+nim	spr	internal.html#spr,int32,int32,int32,ptr.uint8,int8,int32,int32,int32,int32,int32	proc spr(id, x, y: int32; trans_colors: ptr uint8; color_count: int8;\n    scale, flip, rotate, w, h: int32)		149
+nim	tri	internal.html#tri,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,Color	proc tri(x1, y1, x2, y2, x3, y3: cfloat; color: Color)		153
+nim	trib	internal.html#trib,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,Color	proc trib(x1, y1, x2, y2, x3, y3: cfloat; color: Color)		156
+nim	ttri	internal.html#ttri,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,int32,ptr.uint8,int8,cfloat,cfloat,cfloat,bool	proc ttri(x1, y1, x2, y2, x3, y3, u1, v1, u2, v2, u3, v3: cfloat; texsrc: int32;\n     trans_colors: ptr uint8; color_count: int8; z1, z2, z3: cfloat; depth: bool)		159
+nim	btn	internal.html#btn,Button	proc btn(button: Button): uint32		168
+nim	btnp	internal.html#btnp,Button,int32,int32	proc btnp(button: Button; hold: int32 = -1; period: int32 = -1): uint32		171
+nim	key	internal.html#key,Key	proc key(key: Key): bool		174
+nim	keyp	internal.html#keyp,Key,int32,int32	proc keyp(key: Key; hold: int32 = -1; period: int32 = -1): bool		177
+nim	mouse	internal.html#mouse,ptr.MousePos	proc mouse(mouse_ptr_addy: ptr MousePos)		180
+nim	music	internal.html#music,int32,int32,int32,bool,bool,int32,int32	proc music(track, frame, row: int32; loop, sustain: bool; tempo, speed: int32)		188
+nim	sfx	internal.html#sfx,int32,int32,int32,int32,int32,int32,int32,int32	proc sfx(sfx_id, note, octave, duration, channel, volume_left, volume_right, speed: int32)		191
+nim	pmem	internal.html#pmem,int32,int64	proc pmem(address: int32; value: int64): uint32		200
+nim	peek	internal.html#peek,int32,int8	proc peek(address: int32; bits: int8 = 8): int8		203
+nim	peek1	internal.html#peek1,int32	proc peek1(address: int32): int8		206
+nim	peek2	internal.html#peek2,int32	proc peek2(address: int32): int8		209
+nim	peek4	internal.html#peek4,int32	proc peek4(address: int32): int8		212
+nim	poke	internal.html#poke,int32,int8,int8	proc poke(address: int32; value: int8; bits: int8 = 8)		215
+nim	poke1	internal.html#poke1,int32,int8	proc poke1(address: int32; value: int8)		218
+nim	poke2	internal.html#poke2,int32,int8	proc poke2(address: int32; value: int8)		221
+nim	poke4	internal.html#poke4,int32,int8	proc poke4(address: int32; value: int8)		224
+nim	sync	internal.html#sync,int32,int8	proc sync(mask: int32 = 0; bank: int8 = 0; to_cart = false)		227
+nim	vbank	internal.html#vbank,int8	proc vbank(bank: int8): int8		230
+nim	fget	internal.html#fget,int32,int8	proc fget(sprite_index: int32; flag: int8): bool		238
+nim	fset	internal.html#fset,int32,int8,bool	proc fset(sprite_index: int32; flag: int8; value: bool): bool		241
+nim	mget	internal.html#mget,int32,int32	proc mget(x, y: int32): int32		244
+nim	mset	internal.html#mset,int32,int32,int32	proc mset(x, y, value: int32)		247
+nim	tstamp	internal.html#tstamp	proc tstamp(): uint32		255
+nim	trace	internal.html#trace,cstring,Color	proc trace(text: cstring; color: Color = Color15)		258
+nim	tic_exit	internal.html#tic_exit	proc tic_exit()		264
+nim	tic_time	internal.html#tic_time	proc tic_time(): cfloat		269
