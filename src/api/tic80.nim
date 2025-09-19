@@ -1,6 +1,6 @@
 import std/macros
-import internal except btn, btnp
-export internal except btn, btnp
+import internal except btn, btnp, tic_exit, tic_time
+export internal except btn, btnp, tic_exit, tic_time
 
 macro exportWasm*(def: untyped): untyped =
   result = def
