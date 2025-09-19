@@ -62,9 +62,9 @@ proc btnp*(index: Button, hold: int32 = -1, period: int32 = -1): bool {.inline.}
   bool internal.btnp(index, hold, period) and 1'u32
 
 proc mouse*(): MousePos {.inline.} =
+  ##  Get XY and press state of mouse/touch.
   result = MousePos()
   internal.mouse(addr result)
-  ##  Get XY and press state of mouse/touch.
 
 proc pmemset*(address: int32; value: int64) = pmem(address, value)
   ##  Update the persistent memory.
@@ -82,9 +82,10 @@ proc print*(text: string; x, y: int32; color: Color = Color15; fixed = false;
   print(cstring(text), x, y, color, fixed, scale, alt)
 
 proc trace*(s: string) = trace(s.cstring)
+  ##  Print a string to the Console.
 
 proc trace*(arr: varargs[string, `$`]) =
-  ## trace() with Nim strings support and varargs
+  ## trace() that accepts one or more arguments and converts them to string, similar to `echo`
   var length = 0
   for str in arr: length += str.len
   var acc = newStringOfCap(length)
@@ -92,8 +93,10 @@ proc trace*(arr: varargs[string, `$`]) =
   trace(acc.cstring)
 
 proc exit*() {.noreturn.} = internal.tic_exit()
+  ##  Interrupts program and returns to console.
 
 proc time*(): cfloat = internal.tic_time()
+  ##  Returns how many milliseconds have passed since game started.
 
 proc NimMain() {.importc.}
 
