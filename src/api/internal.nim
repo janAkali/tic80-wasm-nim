@@ -47,9 +47,10 @@ type
     middle*: bool
     right*: bool
 
-##  ---------------------------
-##       Constants
-##  ---------------------------
+
+#  ---------------------------
+#       TIC-80 RAM (160kb)
+#  ---------------------------
 
 const
   TilesSize*: uint32 = 0x2000
@@ -70,13 +71,6 @@ const
   SpriteFlagsSize*: uint32 = 512
   SystemFontSize*: uint32 = 2048
   WasmFreeRamSize*: uint32 = 163840
-
-##  160kb
-
-
-##  ---------------------------
-##       TIC-80 RAM
-##  ---------------------------
 
 {.push volatile.}
 
@@ -103,14 +97,12 @@ var
 
 {.pop.}
 
-##  160kb
-
 
 {.push importc, codegenDecl: "__attribute__((import_name(\"$2\"))) $1 $2$3".}
 
-##  ---------------------------
-##       Drawing Procedures
-##  ---------------------------
+#  ---------------------------
+#       Drawing Procedures
+#  ---------------------------
 
 proc circ*(x, y, radius: int32; color: Color)
   ##  Draw a filled circle.
@@ -169,9 +161,9 @@ proc ttri*(x1, y1, x2, y2, x3, y3, u1, v1, u2, v2, u3, v3: cfloat; texsrc: int32
   ##  Draw a triangle filled with texture.
 
 
-##  ---------------------------
-##       Input Functions
-##  ---------------------------
+#  ---------------------------
+#       Input Functions
+#  ---------------------------
 
 proc btn*(button: Button): uint32
   ##  Get gamepad button state in current frame.
@@ -189,9 +181,9 @@ proc mouse*(mouse_ptr_addy: ptr MousePos)
   ##  Get XY and press state of mouse/touch.
 
 
-##  ---------------------------
-##       Sound Functions
-##  ---------------------------
+#  ---------------------------
+#       Sound Functions
+#  ---------------------------
 
 proc music*(track, frame, row: int32; loop, sustain: bool; tempo, speed: int32)
   ##  Play or stop playing music.
@@ -201,9 +193,9 @@ proc sfx*(sfx_id, note, octave, duration, channel, volume_left, volume_right,
   ##  Play or stop playing a given sound.
 
 
-##  ---------------------------
-##       Memory Functions
-##  ---------------------------
+#  ---------------------------
+#       Memory Functions
+#  ---------------------------
 
 proc pmem*(address: int32; value: int64): uint32 {.discardable.}
   ##  Access or update the persistent memory.
@@ -239,9 +231,9 @@ proc vbank*(bank: int8): int8
   ##  Switch the 16kb of banked video RAM.
 
 
-##  ---------------------------
-##       Utility Functions
-##  ---------------------------
+#  ---------------------------
+#       Utility Functions
+#  ---------------------------
 
 proc fget*(sprite_index: int32; flag: int8): bool
   ##  Retrieve a sprite flag.
@@ -256,9 +248,9 @@ proc mset*(x, y, value: int32)
   ##  Update a map tile at given coordinates.
 
 
-##  ---------------------------
-##       System Functions
-##  ---------------------------
+#  ---------------------------
+#       System Functions
+#  ---------------------------
 
 proc tstamp*(): uint32
   ##  Returns the current Unix timestamp in seconds.
