@@ -261,7 +261,7 @@ proc trace*(text: cstring; color: Color = Color15)
 {.pop.}
 
 # 'tic' prefix is needed to fix clashing wasi imports
-proc tic_exit*() {.importc,
+proc tic_exit*() {.importc, noreturn,
     codegenDecl: "__attribute__((import_name(\"exit\"))) $1 $2$3".}
   ##  exit()
   ##  Interrupts program and returns to console.

@@ -91,7 +91,7 @@ proc trace*(arr: varargs[string, `$`]) =
   for s in arr: acc &= s
   trace(acc.cstring)
 
-proc exit*() = internal.tic_exit()
+proc exit*() {.noreturn.} = internal.tic_exit()
 
 proc time*(): cfloat = internal.tic_time()
 
