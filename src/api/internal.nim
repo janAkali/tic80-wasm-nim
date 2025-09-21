@@ -38,7 +38,7 @@ type
     blitSegment*: uint8
     reserved*: array[3, uint8]
 
-  MousePos* {.bycopy.} = object
+  MouseState* {.bycopy.} = object
     x*: int16
     y*: int16
     scrollx*: int8
@@ -177,7 +177,7 @@ proc key*(key: Key): bool
 proc keyp*(key: Key; hold: int32 = -1; period: int32 = -1): bool
   ##  Get keyboard button state relative to previous frame.
 
-proc mouse*(mouse_ptr_addy: ptr MousePos)
+proc mouse*(mouse_ptr_addy: ptr MouseState)
   ##  Get XY and press state of mouse/touch.
 
 

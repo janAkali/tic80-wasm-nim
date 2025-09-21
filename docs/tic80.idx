@@ -6,7 +6,7 @@ nim	spr	tic80.html#spr,int32,int32,int32,Color,int32,int32,int32,int32,int32	pro
 nim	ttri	tic80.html#ttri,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,cfloat,int32,Color,cfloat,cfloat,cfloat	proc ttri(x1, y1, x2, y2, x3, y3, u1, v1, u2, v2, u3, v3: cfloat; texsrc: int32 = 0;\n     transColor: Color = Null; z1: cfloat = 0.0; z2: cfloat = 0.0;\n     z3: cfloat = 0.0; depth = false)		44
 nim	btn	tic80.html#btn,Button	proc btn(index: Button): bool		56
 nim	btnp	tic80.html#btnp,Button,int32,int32	proc btnp(index: Button; hold: int32 = -1; period: int32 = -1): bool		60
-nim	mouse	tic80.html#mouse_2	proc mouse(): MousePos		64
+nim	mouse	tic80.html#mouse_2	proc mouse(): MouseState		64
 nim	pmemset	tic80.html#pmemset,int32,int64	proc pmemset(address: int32; value: int64)		69
 nim	pmemget	tic80.html#pmemget,int32	proc pmemget(address: int32): uint32		71
 nim	pixset	tic80.html#pixset,int32,int32,Color	proc pixset(x, y: int32; color: Color)		74

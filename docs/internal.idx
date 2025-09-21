@@ -124,7 +124,7 @@ nim	Color14	internal.html#Color14	Color.Color14		26
 nim	Color15	internal.html#Color15	Color.Color15		26
 nim	Color	internal.html#Color	enum Color		26
 nim	VRAM	internal.html#VRAM	object VRAM		30
-nim	MousePos	internal.html#MousePos	object MousePos		41
+nim	MouseState	internal.html#MouseState	object MouseState		41
 nim	TilesSize	internal.html#TilesSize	const TilesSize		56
 nim	SpritesSize	internal.html#SpritesSize	const SpritesSize		57
 nim	MapSize	internal.html#MapSize	const MapSize		58
@@ -183,7 +183,7 @@ nim	btn	internal.html#btn,Button	proc btn(button: Button): uint32		168
 nim	btnp	internal.html#btnp,Button,int32,int32	proc btnp(button: Button; hold: int32 = -1; period: int32 = -1): uint32		171
 nim	key	internal.html#key,Key	proc key(key: Key): bool		174
 nim	keyp	internal.html#keyp,Key,int32,int32	proc keyp(key: Key; hold: int32 = -1; period: int32 = -1): bool		177
-nim	mouse	internal.html#mouse,ptr.MousePos	proc mouse(mouse_ptr_addy: ptr MousePos)		180
+nim	mouse	internal.html#mouse,ptr.MouseState	proc mouse(mouse_ptr_addy: ptr MouseState)		180
 nim	music	internal.html#music,int32,int32,int32,bool,bool,int32,int32	proc music(track, frame, row: int32; loop, sustain: bool; tempo, speed: int32)		188
 nim	sfx	internal.html#sfx,int32,int32,int32,int32,int32,int32,int32,int32	proc sfx(sfx_id, note, octave, duration, channel, volume_left, volume_right, speed: int32)		191
 nim	pmem	internal.html#pmem,int32,int64	proc pmem(address: int32; value: int64): uint32		200

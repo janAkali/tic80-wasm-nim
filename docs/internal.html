@@ -73,14 +73,14 @@
   Key_Backspace, Key_Delete, Key_Insert, Key_Pageup, Key_Pagedown, Key_Home,
   Key_End, Key_Up, Key_Down, Key_Left, Key_Right, Key_Capslock, Key_Ctrl,
   Key_Shift, Key_Alt">Key</a></li>
-<li><a class="reference" href="#MousePos" title="MousePos {.bycopy.} = object
+<li><a class="reference" href="#MouseState" title="MouseState {.bycopy.} = object
   x*: int16
   y*: int16
   scrollx*: int8
   scrolly*: int8
   left*: bool
   middle*: bool
-  right*: bool">MousePos</a></li>
+  right*: bool">MouseState</a></li>
 <li><a class="reference" href="#VRAM" title="VRAM {.bycopy.} = object
   screen*: array[130560 div 8, uint8]
   palette*: array[48, uint8] ## 16 colors.
@@ -227,7 +227,7 @@
 
 </ul>
 <ul class="simple nested-toc-section">mouse
-  <li><a class="reference" href="#mouse%2Cptr.MousePos" title="mouse(mouse_ptr_addy: ptr MousePos)">mouse(mouse_ptr_addy: ptr MousePos)</a></li>
+  <li><a class="reference" href="#mouse%2Cptr.MouseState" title="mouse(mouse_ptr_addy: ptr MouseState)">mouse(mouse_ptr_addy: ptr MouseState)</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">mset
@@ -403,8 +403,8 @@
 
   </dd>
 </div>
-<div id="MousePos">
-  <dt><pre><a href="internal.html#MousePos"><span class="Identifier">MousePos</span></a> {.<span class="Identifier">bycopy</span>.} <span class="Other">=</span> <span class="Keyword">object</span>
+<div id="MouseState">
+  <dt><pre><a href="internal.html#MouseState"><span class="Identifier">MouseState</span></a> {.<span class="Identifier">bycopy</span>.} <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">x</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int16</span>
   <span class="Identifier">y</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int16</span>
   <span class="Identifier">scrollx</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int8</span>
@@ -1125,8 +1125,8 @@
 
 </div>
 <div id="mouse-procs-all">
-  <div id="mouse,ptr.MousePos">
-  <dt><pre><span class="Keyword">proc</span> <a href="#mouse%2Cptr.MousePos"><span class="Identifier">mouse</span></a><span class="Other">(</span><span class="Identifier">mouse_ptr_addy</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="internal.html#MousePos"><span class="Identifier">MousePos</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <div id="mouse,ptr.MouseState">
+  <dt><pre><span class="Keyword">proc</span> <a href="#mouse%2Cptr.MouseState"><span class="Identifier">mouse</span></a><span class="Other">(</span><span class="Identifier">mouse_ptr_addy</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="internal.html#MouseState"><span class="Identifier">MouseState</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">codegenDecl</span><span class="Other">:</span> <span class="StringLit">&quot;__attribute__((import_name(\&quot;$2\&quot;))) $1 $2$3&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1534,7 +1534,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2025-09-19 09:51:20 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2025-09-21 02:22:15 UTC</small>
       </div>
     </div>
   </div>
